@@ -1,0 +1,1154 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CineVision AI | From Ideas to Impact</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Correct CSS path -->
+    <link rel="stylesheet" href="{% static 'storyboard/css/style.css' %}">
+</head>
+    <!-- Main CSS -->
+
+    <link
+    rel="stylesheet"
+    href="{% static 'storyboard/css/style.css' %}"
+>
+</head>
+
+
+<body>
+
+
+    <!-- ============================= -->
+    <!-- CINEMATIC BACKGROUND -->
+    <!-- ============================= -->
+
+    <div class="cinemaBackground">
+
+        <div class="filmGlow glowOne"></div>
+
+        <div class="filmGlow glowTwo"></div>
+
+        <div class="grain"></div>
+
+        <div class="filmLines"></div>
+
+    </div>
+
+
+    <!-- ============================= -->
+    <!-- NAVIGATION -->
+    <!-- ============================= -->
+
+    <header class="navbar">
+
+        <nav class="navContainer">
+
+
+            <!-- LOGO -->
+
+            <a href="{% url 'home' %}" class="brand">
+
+                <div class="brandIcon">
+
+                    <i data-lucide="clapperboard"></i>
+
+                </div>
+
+                <div class="brandText">
+
+                    <span class="brandName">
+                        CINEVISION <b>AI</b>
+                    </span>
+
+                    <span class="brandTagline">
+                        FROM IDEAS TO IMPACT
+                    </span>
+
+                </div>
+
+            </a>
+
+
+            <!-- NAV LINKS -->
+
+            <div class="navLinks">
+
+                <a href="#features" class="navLink active">
+                    Home
+                </a>
+
+                <a href="#features" class="navLink">
+                    Features
+                </a>
+
+                <a href="#studio" class="navLink">
+                    AI Studio
+                </a>
+
+                <a href="#pricing" class="navLink">
+                    Pricing
+                </a>
+
+                <a href="#docs" class="navLink">
+                    Docs
+                </a>
+
+            </div>
+
+
+            <!-- NAV ACTIONS -->
+
+            <div class="navActions">
+
+                <button class="searchButton"
+                        aria-label="Search">
+
+                    <i data-lucide="search"></i>
+
+                </button>
+
+                <button class="loginButton">
+                    Login
+                </button>
+
+                <a href="{% url 'input' %}"
+                   class="navStartButton">
+
+                    Get Started
+
+                    <i data-lucide="arrow-up-right"></i>
+
+                </a>
+
+            </div>
+
+
+            <!-- MOBILE MENU -->
+
+            <button class="mobileMenuButton"
+                    aria-label="Open menu"
+                    aria-expanded="false">
+
+                <i data-lucide="menu"></i>
+
+            </button>
+
+
+        </nav>
+
+    </header>
+
+
+    <!-- ============================= -->
+    <!-- HERO SECTION -->
+    <!-- ============================= -->
+
+    <main>
+
+
+        <section class="heroSection">
+
+
+            <!-- LEFT CONTENT -->
+
+            <div class="heroContent">
+
+
+                <div class="eyebrow">
+
+                    <span class="eyebrowLine"></span>
+
+                    <span>
+                        AI POWERED FILMMAKING
+                    </span>
+
+                </div>
+
+
+                <h1 class="heroTitle">
+
+                    Turn Your Vision
+
+                    <span>
+                        Into a <em>Scene</em>
+                    </span>
+
+                </h1>
+
+
+                <p class="heroDescription">
+
+                    Transform movie scripts into cinematic storyboards,
+                    camera angles and previsualization in seconds.
+
+                </p>
+
+
+                <!-- HERO BUTTONS -->
+
+                <div class="heroActions">
+
+                    <a href="{% url 'input' %}"
+                       class="primaryButton">
+
+                        Start Creating
+
+                        <i data-lucide="arrow-up-right"></i>
+
+                    </a>
+
+
+                    <button class="secondaryButton"
+                            id="watchDemoButton">
+
+                        <span class="playIcon">
+
+                            <i data-lucide="play"></i>
+
+                        </span>
+
+                        Watch Demo
+
+                    </button>
+
+                </div>
+
+
+                <!-- STATS -->
+
+                <div class="heroStats">
+
+
+                    <div class="statItem">
+
+                        <strong>AI</strong>
+
+                        <span>POWERED</span>
+
+                    </div>
+
+
+                    <div class="statDivider"></div>
+
+
+                    <div class="statItem">
+
+                        <strong>∞</strong>
+
+                        <span>POSSIBILITIES</span>
+
+                    </div>
+
+
+                    <div class="statDivider"></div>
+
+
+                    <div class="statItem">
+
+                        <strong>01</strong>
+
+                        <span>VISION</span>
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+            <!-- RIGHT VIDEO PREVIEW -->
+
+            <div class="heroVisual">
+
+
+                <div class="previewGlow"></div>
+
+
+                <div class="cinematicPreview">
+
+
+                    <!-- PREVIEW HEADER -->
+
+                    <div class="previewHeader">
+
+
+                        <div class="sceneTitle">
+
+                            <i data-lucide="clapperboard"></i>
+
+                            <span>
+                                SCENE 01 — HERO ENTRY
+                            </span>
+
+                        </div>
+
+
+                        <div class="previewStatus">
+
+                            <span class="statusDot"></span>
+
+                            PREVISUALIZATION
+
+                        </div>
+
+
+                    </div>
+
+
+                    <!-- VIDEO -->
+
+                    <div class="videoFrame">
+
+
+                        <video
+                            id="heroVideo"
+                            class="heroVideo"
+                            autoplay
+                            muted
+                            loop
+                            playsinline
+                            preload="metadata"
+                            poster="{% static 'storyboard/images/hero-entry-poster.jpg' %}">
+
+                            <source
+                                src="{% static 'storyboard/videos/hero-entry.mp4' %}"
+                                type="video/mp4">
+
+                            Your browser does not support video playback.
+
+                        </video>
+
+
+                        <!-- VIDEO OVERLAY -->
+
+                        <div class="videoOverlay">
+
+
+                            <div class="videoSceneLabel">
+
+                                <span>
+                                    SCENE 01
+                                </span>
+
+                                <strong>
+                                    HERO ENTRY
+                                </strong>
+
+                            </div>
+
+
+                            <button class="videoPlayButton"
+                                    id="videoPlayButton"
+                                    aria-label="Play or pause video">
+
+                                <i data-lucide="play"></i>
+
+                            </button>
+
+
+                            <div class="videoBottomLabel">
+
+                                <span>
+                                    LOW ANGLE
+                                </span>
+
+                                <span>
+                                    MASTER SHOT
+                                </span>
+
+                            </div>
+
+
+                        </div>
+
+
+                        <!-- VIDEO CONTROLS -->
+
+                        <div class="videoControls">
+
+
+                            <button id="playPauseButton"
+                                    class="videoControlButton"
+                                    aria-label="Play or pause">
+
+                                <i data-lucide="pause"></i>
+
+                            </button>
+
+
+                            <div class="videoProgress">
+
+                                <div class="progressBar">
+
+                                    <div class="progressFill"
+                                         id="progressFill"></div>
+
+                                </div>
+
+                            </div>
+
+
+                            <span class="videoTime"
+                                  id="videoTime">
+
+                                00:00
+
+                            </span>
+
+
+                            <button id="muteButton"
+                                    class="videoControlButton"
+                                    aria-label="Mute or unmute">
+
+                                <i data-lucide="volume-x"></i>
+
+                            </button>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                    <!-- SHOT METADATA -->
+
+                    <div class="shotMetadata">
+
+
+                        <div class="shotMetaItem">
+
+                            <span>
+                                SHOT TYPE
+                            </span>
+
+                            <strong>
+                                Master Shot
+                            </strong>
+
+                        </div>
+
+
+                        <div class="shotMetaItem">
+
+                            <span>
+                                CAMERA ANGLE
+                            </span>
+
+                            <strong>
+                                Low Angle
+                            </strong>
+
+                        </div>
+
+
+                        <div class="shotMetaItem">
+
+                            <span>
+                                MOOD
+                            </span>
+
+                            <strong>
+                                Mass Entry
+                            </strong>
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- FILMSTRIP -->
+
+                <div class="filmstrip">
+
+
+                    <div class="filmstripLabel">
+
+                        <span>
+                            SHOT SEQUENCE
+                        </span>
+
+                        <span>
+                            04 FRAMES
+                        </span>
+
+                    </div>
+
+
+                    <div class="filmstripFrames">
+
+
+                        <div class="filmFrame active">
+
+                            <div class="frameImage frameOne"></div>
+
+                            <span>
+                                01
+                            </span>
+
+                        </div>
+
+
+                        <div class="filmFrame">
+
+                            <div class="frameImage frameTwo"></div>
+
+                            <span>
+                                02
+                            </span>
+
+                        </div>
+
+
+                        <div class="filmFrame">
+
+                            <div class="frameImage frameThree"></div>
+
+                            <span>
+                                03
+                            </span>
+
+                        </div>
+
+
+                        <div class="filmFrame">
+
+                            <div class="frameImage frameFour"></div>
+
+                            <span>
+                                04
+                            </span>
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+        <!-- ============================= -->
+        <!-- FEATURES SECTION -->
+        <!-- ============================= -->
+
+
+        <section class="featuresSection"
+                 id="features">
+
+
+            <div class="sectionHeading">
+
+
+                <div class="eyebrow centered">
+
+                    <span class="eyebrowLine"></span>
+
+                    <span>
+                        BUILT FOR CREATORS
+                    </span>
+
+                    <span class="eyebrowLine"></span>
+
+                </div>
+
+
+                <h2>
+
+                    A Smarter Way to
+
+                    <em>
+                        Visualize Stories
+                    </em>
+
+                </h2>
+
+
+                <p>
+
+                    From the first idea to the final frame,
+                    bring your cinematic vision to life.
+
+                </p>
+
+
+            </div>
+
+
+            <!-- FEATURE CARDS -->
+
+
+            <div class="featuresGrid">
+
+
+                <div class="featureCard">
+
+
+                    <div class="featureIcon">
+
+                        <i data-lucide="pen-tool"></i>
+
+                    </div>
+
+
+                    <span class="featureNumber">
+                        01
+                    </span>
+
+
+                    <h3>
+                        Script to Storyboard
+                    </h3>
+
+
+                    <p>
+
+                        Convert your ideas or scripts
+                        into stunning visual storyboards
+                        instantly.
+
+                    </p>
+
+
+                    <a href="{% url 'input' %}"
+                       class="featureLink">
+
+                        Explore Feature
+
+                        <i data-lucide="arrow-up-right"></i>
+
+                    </a>
+
+
+                </div>
+
+
+                <div class="featureCard">
+
+
+                    <div class="featureIcon">
+
+                        <i data-lucide="camera"></i>
+
+                    </div>
+
+
+                    <span class="featureNumber">
+                        02
+                    </span>
+
+
+                    <h3>
+                        Cinematic Intelligence
+                    </h3>
+
+
+                    <p>
+
+                        Get intelligent suggestions
+                        for camera angles, lighting,
+                        and shot composition.
+
+                    </p>
+
+
+                    <a href="{% url 'input' %}"
+                       class="featureLink">
+
+                        Explore Feature
+
+                        <i data-lucide="arrow-up-right"></i>
+
+                    </a>
+
+
+                </div>
+
+
+                <div class="featureCard">
+
+
+                    <div class="featureIcon">
+
+                        <i data-lucide="film"></i>
+
+                    </div>
+
+
+                    <span class="featureNumber">
+                        03
+                    </span>
+
+
+                    <h3>
+                        AI Generated Visuals
+                    </h3>
+
+
+                    <p>
+
+                        Generate high-quality images
+                        and video previews for
+                        your scenes.
+
+                    </p>
+
+
+                    <a href="{% url 'input' %}"
+                       class="featureLink">
+
+                        Explore Feature
+
+                        <i data-lucide="arrow-up-right"></i>
+
+                    </a>
+
+
+                </div>
+
+
+                <div class="featureCard">
+
+
+                    <div class="featureIcon">
+
+                        <i data-lucide="users"></i>
+
+                    </div>
+
+
+                    <span class="featureNumber">
+                        04
+                    </span>
+
+
+                    <h3>
+                        Collaborate & Refine
+                    </h3>
+
+
+                    <p>
+
+                        Work with your team,
+                        make changes, and bring
+                        your vision closer to reality.
+
+                    </p>
+
+
+                    <a href="{% url 'input' %}"
+                       class="featureLink">
+
+                        Explore Feature
+
+                        <i data-lucide="arrow-up-right"></i>
+
+                    </a>
+
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+        <!-- ============================= -->
+        <!-- STUDIO PREVIEW -->
+        <!-- ============================= -->
+
+
+        <section class="studioSection"
+                 id="studio">
+
+
+            <div class="studioContent">
+
+
+                <div class="eyebrow">
+
+                    <span class="eyebrowLine"></span>
+
+                    AI CINEMATIC STUDIO
+
+                </div>
+
+
+                <h2>
+
+                    Every Great Film
+
+                    <span>
+                        Begins With a <em>Vision.</em>
+                    </span>
+
+                </h2>
+
+
+                <p>
+
+                    Create, refine, and visualize
+                    your cinematic ideas in one
+                    creative workspace.
+
+                </p>
+
+
+                <a href="{% url 'input' %}"
+                   class="primaryButton">
+
+                    Enter AI Studio
+
+                    <i data-lucide="arrow-up-right"></i>
+
+                </a>
+
+
+            </div>
+
+
+            <div class="studioVisual">
+
+
+                <div class="studioCard">
+
+
+                    <div class="studioCardHeader">
+
+                        <span>
+                            CINEVISION AI
+                        </span>
+
+                        <span class="studioLive">
+                            <span class="statusDot"></span>
+                            STUDIO PREVIEW
+                        </span>
+
+                    </div>
+
+
+                    <div class="studioCardBody">
+
+
+                        <div class="studioLine"></div>
+
+                        <div class="studioLine short"></div>
+
+                        <div class="studioLine"></div>
+
+
+                        <div class="studioPlaceholder">
+
+                            <i data-lucide="clapperboard"></i>
+
+                            <span>
+                                YOUR NEXT SCENE
+                            </span>
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+        <!-- ============================= -->
+        <!-- FINAL CTA -->
+        <!-- ============================= -->
+
+
+        <section class="finalCta"
+                 id="pricing">
+
+
+            <div class="finalCtaContent">
+
+
+                <span class="finalLabel">
+                    YOUR STORY STARTS HERE
+                </span>
+
+
+                <h2>
+
+                    Ready to Create
+
+                    <em>
+                        Something Cinematic?
+                    </em>
+
+                </h2>
+
+
+                <a href="{% url 'input' %}"
+                   class="primaryButton">
+
+                    Start Your Project
+
+                    <i data-lucide="arrow-up-right"></i>
+
+                </a>
+
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+    <!-- ============================= -->
+    <!-- FOOTER -->
+    <!-- ============================= -->
+
+
+    <footer class="footer"
+            id="docs">
+
+
+        <div class="footerContainer">
+
+
+            <div class="footerBrand">
+
+
+                <a href="{% url 'home' %}"
+                   class="brand">
+
+                    <div class="brandIcon">
+
+                        <i data-lucide="clapperboard"></i>
+
+                    </div>
+
+                    <div class="brandText">
+
+                        <span class="brandName">
+                            CINEVISION <b>AI</b>
+                        </span>
+
+                        <span class="brandTagline">
+                            FROM IDEAS TO IMPACT
+                        </span>
+
+                    </div>
+
+                </a>
+
+
+                <p>
+
+                    Your cinematic imagination,
+                    visualized.
+
+                </p>
+
+
+            </div>
+
+
+            <div class="footerLinks">
+
+
+                <a href="#features">
+                    Features
+                </a>
+
+                <a href="#studio">
+                    AI Studio
+                </a>
+
+                <a href="#pricing">
+                    Pricing
+                </a>
+
+                <a href="#docs">
+                    Documentation
+                </a>
+
+
+            </div>
+
+
+        </div>
+
+
+        <div class="footerBottom">
+
+
+            <span>
+                © 2026 CineVision AI. All rights reserved.
+            </span>
+
+
+            <span>
+                Made for storytellers.
+            </span>
+
+
+        </div>
+
+
+    </footer>
+
+
+    <!-- ============================= -->
+    <!-- DEMO MODAL -->
+    <!-- ============================= -->
+
+
+    <div class="demoModal"
+         id="demoModal"
+         aria-hidden="true">
+
+
+        <div class="demoModalOverlay"
+             id="demoModalOverlay"></div>
+
+
+        <div class="demoModalContent"
+             role="dialog"
+             aria-modal="true"
+             aria-label="CineVision AI demo">
+
+
+            <button class="demoCloseButton"
+                    id="demoCloseButton"
+                    aria-label="Close demo">
+
+                <i data-lucide="x"></i>
+
+            </button>
+
+
+            <div class="demoModalHeader">
+
+                <span>
+                    CINEVISION AI
+                </span>
+
+                <h3>
+                    From Ideas to Impact
+                </h3>
+
+            </div>
+
+
+            <div class="demoModalVideo">
+
+
+                <video
+                    id="demoVideo"
+                    controls
+                    playsinline
+                    preload="metadata">
+
+                    <source
+                        src="{% static 'storyboard/videos/hero-entry.mp4' %}"
+                        type="video/mp4">
+
+                    Your browser does not support video playback.
+
+                </video>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="{% static 'storyboard/js/script.js' %}"></script>
+
+
+    <script>
+
+        lucide.createIcons();
+
+    </script>
+<div class="video-section">
+
+    <video
+        autoplay
+        muted
+        loop
+        playsinline
+        controls
+    >
+        <source
+            src="{% static 'storyboard/videos/hero-entry.mp4' %}"
+            type="video/mp4"
+        >
+    </video>
+
+    <div class="video-overlay">
+
+        <div>
+            <div class="section-label">
+                Visual Storytelling
+            </div>
+
+            <h2>
+                From Ideas
+                <span class="text-gradient">
+                    To Impact
+                </span>
+            </h2>
+        </div>
+
+    </div>
+
+</div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,447 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Storyboard Result | CineVision AI</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Correct CSS path -->
+    <link rel="stylesheet" href="{% static 'storyboard/css/style.css' %}">
+</head>
+
+<body>
+
+    <!-- Background Effects -->
+
+    <div class="background">
+        <div class="blob blob1"></div>
+        <div class="blob blob2"></div>
+        <div class="blob blob3"></div>
+    </div>
+
+
+    <!-- Header -->
+
+    <header>
+
+        <nav>
+
+            <a href="{% url 'home' %}" class="logo">
+
+                <span class="logo-mark">
+                    <i data-lucide="clapperboard"></i>
+                </span>
+
+                CineVision
+
+            </a>
+
+
+            <ul>
+
+                <li>
+                    <a href="{% url 'home' %}#features">
+                        Features
+                    </a>
+                </li>
+
+                <li>
+                    <a href="{% url 'home' %}#studio">
+                        AI Studio
+                    </a>
+                </li>
+
+                <li>
+                    <a href="{% url 'home' %}#pricing">
+                        Pricing
+                    </a>
+                </li>
+
+                <li>
+                    <a href="{% url 'home' %}#docs">
+                        Docs
+                    </a>
+                </li>
+
+            </ul>
+
+
+            <div class="buttons">
+
+                <a href="{% url 'home' %}" class="login">
+                    Home
+                </a>
+
+                <a href="{% url 'input' %}" class="start">
+
+                    New Project
+
+                    <i data-lucide="plus" size="16"></i>
+
+                </a>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+
+    <!-- Result Main Section -->
+
+    <main class="result-page">
+
+        <div class="container">
+
+
+            <!-- Result Heading -->
+
+            <div class="result-header">
+
+                <div>
+
+                    <div class="section-label">
+                        Storyboard Generated
+                    </div>
+
+                    <h1>
+                        {{ title }}
+                    </h1>
+
+                    <p>
+                        Your cinematic project details have been
+                        successfully processed.
+                    </p>
+
+                </div>
+
+
+                <div class="result-actions">
+
+                    <a
+                        href="{% url 'input' %}"
+                        class="secondary-button"
+                    >
+
+                        <i data-lucide="arrow-left" size="16"></i>
+
+                        Create Again
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Project Summary -->
+
+            <section class="result-summary">
+
+
+                <div class="summary-card">
+
+                    <small>
+                        Movie Title
+                    </small>
+
+                    <strong>
+                        {{ title }}
+                    </strong>
+
+                </div>
+
+
+                <div class="summary-card">
+
+                    <small>
+                        Genre
+                    </small>
+
+                    <strong>
+                        {{ genre }}
+                    </strong>
+
+                </div>
+
+
+                <div class="summary-card">
+
+                    <small>
+                        Duration
+                    </small>
+
+                    <strong>
+                        {{ duration }}
+                    </strong>
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- Story Description -->
+
+            <section class="story-result-card">
+
+                <div class="section-label">
+                    Project Story
+                </div>
+
+                <h2>
+                    Story Description
+                </h2>
+
+                <p>
+                    {{ story }}
+                </p>
+
+            </section>
+
+
+
+            <!-- Cinematic Concept Frames -->
+
+            <section>
+
+                <div class="section-heading">
+
+                    <div class="section-label">
+                        Visual Direction
+                    </div>
+
+                    <h2>
+                        Cinematic
+                        <span class="text-gradient">
+                            Concept Frames
+                        </span>
+                    </h2>
+
+                    <p>
+                        These concept frames represent possible
+                        visual directions for your story.
+                    </p>
+
+                </div>
+
+
+                <div class="scene-grid">
+
+
+                    <!-- Scene One -->
+
+                    <article class="scene-card">
+
+                        <div class="scene-image">
+
+                            <span class="scene-number">
+                                SCENE 01
+                            </span>
+
+                        </div>
+
+                        <div class="scene-details">
+
+                            <h3>
+                                Establishing Shot
+                            </h3>
+
+                            <p>
+                                Introduce the location, atmosphere,
+                                and world of the story using a wide
+                                cinematic frame.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- Scene Two -->
+
+                    <article class="scene-card">
+
+                        <div class="scene-image scene-two">
+
+                            <span class="scene-number">
+                                SCENE 02
+                            </span>
+
+                        </div>
+
+                        <div class="scene-details">
+
+                            <h3>
+                                Character Moment
+                            </h3>
+
+                            <p>
+                                Focus on the main character with
+                                expressive framing, emotion,
+                                and controlled camera movement.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- Scene Three -->
+
+                    <article class="scene-card">
+
+                        <div class="scene-image scene-three">
+
+                            <span class="scene-number">
+                                SCENE 03
+                            </span>
+
+                        </div>
+
+                        <div class="scene-details">
+
+                            <h3>
+                                Dramatic Climax
+                            </h3>
+
+                            <p>
+                                Build tension through lighting,
+                                composition, camera angle,
+                                and visual storytelling.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                </div>
+
+            </section>
+
+
+
+            <!-- Production Information -->
+
+            <section class="story-result-card">
+
+                <div class="section-label">
+                    Production Notes
+                </div>
+
+                <h2>
+                    Next Steps
+                </h2>
+
+                <p>
+                    Use this project summary as the foundation
+                    for developing your storyboard. You can
+                    expand each scene with character details,
+                    camera angles, lighting, dialogue, sound,
+                    and shot duration.
+                </p>
+
+            </section>
+
+
+
+            <!-- Action Buttons -->
+
+            <div class="result-actions">
+
+                <a
+                    href="{% url 'input' %}"
+                    class="primary-button"
+                >
+
+                    <i data-lucide="plus" size="18"></i>
+
+                    Create New Storyboard
+
+                </a>
+
+                <a
+                    href="{% url 'home' %}"
+                    class="secondary-button"
+                >
+
+                    Back to Home
+
+                    <i data-lucide="arrow-up-right" size="16"></i>
+
+                </a>
+
+            </div>
+
+
+        </div>
+
+    </main>
+
+
+
+    <!-- Footer -->
+
+    <footer>
+
+        <div class="container">
+
+            <div class="footer-content">
+
+                <p>
+                    © 2026 CineVision AI. Built for cinematic creators.
+                </p>
+
+                <div class="footer-links">
+
+                    <a href="{% url 'home' %}">
+                        Home
+                    </a>
+
+                    <a href="{% url 'input' %}">
+                        Create
+                    </a>
+
+                    <a href="#">
+                        Privacy
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <script src="{% static 'storyboard/js/script.js' %}"></script>
+
+    <script>
+        lucide.createIcons();
+    </script>
+
+</body>
+
+</html>
