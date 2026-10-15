@@ -1,33 +1,22 @@
-{% load static %}
-
-<!DOCTYPE html>
-<html lang="en">
 
 {% load static %}
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Storyboard Result | CineVision AI</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700;800&display=swap"
           rel="stylesheet">
 
     <script src="https://unpkg.com/lucide@latest"></script>
-
-    <!-- Correct CSS path -->
     <link rel="stylesheet" href="{% static 'storyboard/css/style.css' %}">
 </head>
 
 <body>
-
-    <!-- Background Effects -->
 
     <div class="background">
         <div class="blob blob1"></div>
@@ -35,413 +24,391 @@
         <div class="blob blob3"></div>
     </div>
 
-
-    <!-- Header -->
-
     <header>
-
         <nav>
-
             <a href="{% url 'home' %}" class="logo">
-
                 <span class="logo-mark">
                     <i data-lucide="clapperboard"></i>
                 </span>
-
                 CineVision
-
             </a>
 
-
             <ul>
-
-                <li>
-                    <a href="{% url 'home' %}#features">
-                        Features
-                    </a>
-                </li>
-
-                <li>
-                    <a href="{% url 'home' %}#studio">
-                        AI Studio
-                    </a>
-                </li>
-
-                <li>
-                    <a href="{% url 'home' %}#pricing">
-                        Pricing
-                    </a>
-                </li>
-
-                <li>
-                    <a href="{% url 'home' %}#docs">
-                        Docs
-                    </a>
-                </li>
-
+                <li><a href="{% url 'home' %}#features">Features</a></li>
+                <li><a href="{% url 'home' %}#studio">AI Studio</a></li>
+                <li><a href="{% url 'home' %}#pricing">Pricing</a></li>
+                <li><a href="{% url 'home' %}#docs">Docs</a></li>
             </ul>
 
-
             <div class="buttons">
-
-                <a href="{% url 'home' %}" class="login">
-                    Home
-                </a>
-
+                <a href="{% url 'home' %}" class="login">Home</a>
                 <a href="{% url 'input' %}" class="start">
-
                     New Project
-
                     <i data-lucide="plus" size="16"></i>
-
                 </a>
-
             </div>
-
         </nav>
-
     </header>
 
-
-    <!-- Result Main Section -->
-
     <main class="result-page">
-
         <div class="container">
 
-
-            <!-- Result Heading -->
-
-            <div class="result-header">
-
-                <div>
-
-                    <div class="section-label">
-                        Storyboard Generated
-                    </div>
-
-                    <h1>
-                        {{ title }}
-                    </h1>
-
-                    <p>
-                        Your cinematic project details have been
-                        successfully processed.
-                    </p>
-
-                </div>
-
-
-                <div class="result-actions">
-
-                    <a
-                        href="{% url 'input' %}"
-                        class="secondary-button"
-                    >
-
-                        <i data-lucide="arrow-left" size="16"></i>
-
-                        Create Again
-
-                    </a>
-
-                </div>
-
-            </div>
-
-
-
-            <!-- Project Summary -->
-
-            <section class="result-summary">
-
-
-                <div class="summary-card">
-
-                    <small>
-                        Movie Title
-                    </small>
-
-                    <strong>
-                        {{ title }}
-                    </strong>
-
-                </div>
-
-
-                <div class="summary-card">
-
-                    <small>
-                        Genre
-                    </small>
-
-                    <strong>
-                        {{ genre }}
-                    </strong>
-
-                </div>
-
-
-                <div class="summary-card">
-
-                    <small>
-                        Duration
-                    </small>
-
-                    <strong>
-                        {{ duration }}
-                    </strong>
-
-                </div>
-
-
-            </section>
-
-
-
-            <!-- Story Description -->
+            {% if error %}
 
             <section class="story-result-card">
+                <div class="section-label">STORYBOARD ERROR</div>
+                <h2>We couldn't generate your storyboard</h2>
+                <p>{{ error }}</p>
 
-                <div class="section-label">
-                    Project Story
+                <div class="result-actions">
+                    <a href="{% url 'input' %}" class="primary-button">
+                        <i data-lucide="refresh-cw" size="18"></i>
+                        Try Again
+                    </a>
+                    <a href="{% url 'home' %}" class="secondary-button">
+                        Back to Home
+                    </a>
                 </div>
-
-                <h2>
-                    Story Description
-                </h2>
-
-                <p>
-                    {{ story }}
-                </p>
-
             </section>
 
+            {% else %}
 
+            <!-- RESULT HEADER -->
 
-            <!-- Cinematic Concept Frames -->
+            <div class="result-header">
+                <div>
+                    <div class="section-label">Storyboard Generated</div>
+                    <h1>{{ title }}</h1>
+                    <p>Your story has been analysed and your cinematic storyboard is ready.</p>
+                </div>
+
+                <div class="result-actions">
+                    <a href="{% url 'input' %}" class="secondary-button">
+                        <i data-lucide="arrow-left" size="16"></i>
+                        Create Again
+                    </a>
+                </div>
+            </div>
+
+            <!-- PROJECT SUMMARY -->
+
+            <section class="result-summary">
+                <div class="summary-card">
+                    <small>Movie Title</small>
+                    <strong>{{ title }}</strong>
+                </div>
+
+                <div class="summary-card">
+                    <small>Genre</small>
+                    <strong>{{ genre }}</strong>
+                </div>
+
+                <div class="summary-card">
+                    <small>Duration</small>
+                    <strong>{{ duration }}</strong>
+                </div>
+            </section>
+
+            <!-- ORIGINAL STORY -->
+
+            <section class="story-result-card">
+                <div class="section-label">PROJECT STORY</div>
+                <h2>Story Description</h2>
+                <p>{{ story|linebreaksbr }}</p>
+            </section>
+
+            <!-- AI STORY ANALYSIS -->
+
+            {% if analysis %}
+            <section class="story-result-card">
+
+                <div class="section-label">AI STORY ANALYSIS</div>
+
+                <h2>{{ analysis.logline }}</h2>
+
+                <h3>Story Summary</h3>
+                <p>{{ analysis.summary }}</p>
+
+                <h3>Central Conflict</h3>
+                <p>{{ analysis.central_conflict }}</p>
+
+                <h3>Themes</h3>
+                <ul>
+                    {% for theme in analysis.themes %}
+                    <li>{{ theme }}</li>
+                    {% empty %}
+                    <li>No themes available.</li>
+                    {% endfor %}
+                </ul>
+
+                <h3>Tone and Atmosphere</h3>
+                <p>{{ analysis.tone }}</p>
+
+                <h3>Setting</h3>
+                <p>{{ analysis.setting }}</p>
+
+                <h3>Character Analysis</h3>
+
+                {% for character in analysis.characters %}
+                <div class="character-analysis">
+                    <h4>{{ character.name }}</h4>
+
+                    <p>
+                        <strong>Role:</strong>
+                        {{ character.role }}
+                    </p>
+
+                    <p>
+                        <strong>Description:</strong>
+                        {{ character.description }}
+                    </p>
+
+                    <p>
+                        <strong>Visual Appearance:</strong>
+                        {{ character.visual_appearance }}
+                    </p>
+                </div>
+                {% empty %}
+                <p>No character details were generated.</p>
+                {% endfor %}
+
+            </section>
+            {% endif %}
+
+            <!-- CINEMATIC STORYBOARD -->
 
             <section>
-
                 <div class="section-heading">
-
-                    <div class="section-label">
-                        Visual Direction
-                    </div>
+                    <div class="section-label">VISUAL DIRECTION</div>
 
                     <h2>
                         Cinematic
-                        <span class="text-gradient">
-                            Concept Frames
-                        </span>
+                        <span class="text-gradient">Storyboard</span>
                     </h2>
 
                     <p>
-                        These concept frames represent possible
-                        visual directions for your story.
+                        Scene-by-scene cinematic direction generated
+                        from your story.
                     </p>
-
                 </div>
-
 
                 <div class="scene-grid">
 
-
-                    <!-- Scene One -->
+                    {% for scene in scenes %}
 
                     <article class="scene-card">
 
                         <div class="scene-image">
-
                             <span class="scene-number">
-                                SCENE 01
+                                SCENE {{ scene.scene_number|stringformat:"02d" }}
                             </span>
-
                         </div>
 
                         <div class="scene-details">
 
-                            <h3>
-                                Establishing Shot
-                            </h3>
+                            <h3>{{ scene.title }}</h3>
+                            <p>{{ scene.purpose }}</p>
 
                             <p>
-                                Introduce the location, atmosphere,
-                                and world of the story using a wide
-                                cinematic frame.
+                                <strong>Location:</strong>
+                                {{ scene.location }}
                             </p>
-
-                        </div>
-
-                    </article>
-
-
-
-                    <!-- Scene Two -->
-
-                    <article class="scene-card">
-
-                        <div class="scene-image scene-two">
-
-                            <span class="scene-number">
-                                SCENE 02
-                            </span>
-
-                        </div>
-
-                        <div class="scene-details">
-
-                            <h3>
-                                Character Moment
-                            </h3>
 
                             <p>
-                                Focus on the main character with
-                                expressive framing, emotion,
-                                and controlled camera movement.
+                                <strong>Time of Day:</strong>
+                                {{ scene.time_of_day }}
                             </p>
-
-                        </div>
-
-                    </article>
-
-
-
-                    <!-- Scene Three -->
-
-                    <article class="scene-card">
-
-                        <div class="scene-image scene-three">
-
-                            <span class="scene-number">
-                                SCENE 03
-                            </span>
-
-                        </div>
-
-                        <div class="scene-details">
-
-                            <h3>
-                                Dramatic Climax
-                            </h3>
 
                             <p>
-                                Build tension through lighting,
-                                composition, camera angle,
-                                and visual storytelling.
+                                <strong>Action:</strong>
+                                {{ scene.action }}
                             </p>
 
-                        </div>
+                            {% if scene.dialogue %}
+                            <p>
+                                <strong>Dialogue:</strong>
+                                {{ scene.dialogue }}
+                            </p>
+                            {% endif %}
 
+                            <p>
+                                <strong>Estimated Duration:</strong>
+                                {{ scene.duration_seconds }} seconds
+                            </p>
+
+                            <h4>Cinematic Direction</h4>
+
+                            <p>
+                                <strong>Camera Shot:</strong>
+                                {{ scene.camera_shot }}
+                            </p>
+
+                            <p>
+                                <strong>Camera Angle:</strong>
+                                {{ scene.camera_angle }}
+                            </p>
+
+                            <p>
+                                <strong>Camera Movement:</strong>
+                                {{ scene.camera_movement }}
+                            </p>
+
+                            <p>
+                                <strong>Lighting:</strong>
+                                {{ scene.lighting }}
+                            </p>
+
+                            <p>
+                                <strong>Colour Palette:</strong>
+                                {{ scene.color_palette }}
+                            </p>
+
+                            <p>
+                                <strong>Mood:</strong>
+                                {{ scene.mood }}
+                            </p>
+
+                            <p>
+                                <strong>Sound Design:</strong>
+                                {{ scene.sound_design }}
+                            </p>
+
+                            <h4>Director's Notes</h4>
+                            <p>{{ scene.director_notes }}</p>
+
+                            <h4>Image Generation Prompt</h4>
+                            <p>{{ scene.image_prompt }}</p>
+
+                            <button
+                                type="button"
+                                class="secondary-button"
+                                data-prompt="{{ scene.image_prompt|escape }}"
+                                onclick="copyScenePrompt(this)">
+                                <i data-lucide="copy" size="16"></i>
+                                Copy Image Prompt
+                            </button>
+
+                        </div>
                     </article>
 
+                    {% empty %}
+
+                    <section class="story-result-card">
+                        <h3>No Scenes Generated</h3>
+                        <p>
+                            No scenes were returned. Please try generating
+                            your storyboard again.
+                        </p>
+                    </section>
+
+                    {% endfor %}
 
                 </div>
-
             </section>
 
-
-
-            <!-- Production Information -->
+            <!-- PRODUCTION NOTES -->
 
             <section class="story-result-card">
-
-                <div class="section-label">
-                    Production Notes
-                </div>
-
-                <h2>
-                    Next Steps
-                </h2>
+                <div class="section-label">PRODUCTION NOTES</div>
+                <h2>Next Steps</h2>
 
                 <p>
-                    Use this project summary as the foundation
-                    for developing your storyboard. You can
-                    expand each scene with character details,
-                    camera angles, lighting, dialogue, sound,
-                    and shot duration.
+                    Use the generated scene breakdown, director's notes,
+                    and image prompts as a foundation for your film.
+                    Each scene contains visual and technical guidance
+                    to help develop the storyboard further.
                 </p>
 
+                <p>
+                    Note: This version generates text-based AI story
+                    analysis and cinematic direction. Actual image and
+                    video generation must be integrated separately.
+                </p>
             </section>
 
-
-
-            <!-- Action Buttons -->
+            <!-- ACTION BUTTONS -->
 
             <div class="result-actions">
-
-                <a
-                    href="{% url 'input' %}"
-                    class="primary-button"
-                >
-
+                <a href="{% url 'input' %}" class="primary-button">
                     <i data-lucide="plus" size="18"></i>
-
                     Create New Storyboard
-
                 </a>
 
-                <a
-                    href="{% url 'home' %}"
-                    class="secondary-button"
-                >
-
+                <a href="{% url 'home' %}" class="secondary-button">
                     Back to Home
-
                     <i data-lucide="arrow-up-right" size="16"></i>
-
                 </a>
-
             </div>
 
+            {% endif %}
 
         </div>
-
     </main>
 
-
-
-    <!-- Footer -->
+    <!-- FOOTER -->
 
     <footer>
-
         <div class="container">
-
             <div class="footer-content">
 
-                <p>
-                    © 2026 CineVision AI. Built for cinematic creators.
-                </p>
+                <p>© 2026 CineVision AI. Built for cinematic creators.</p>
 
                 <div class="footer-links">
-
-                    <a href="{% url 'home' %}">
-                        Home
-                    </a>
-
-                    <a href="{% url 'input' %}">
-                        Create
-                    </a>
-
-                    <a href="#">
-                        Privacy
-                    </a>
-
+                    <a href="{% url 'home' %}">Home</a>
+                    <a href="{% url 'input' %}">Create</a>
+                    <a href="#">Privacy</a>
                 </div>
 
             </div>
-
         </div>
-
     </footer>
-
 
     <script src="{% static 'storyboard/js/script.js' %}"></script>
 
     <script>
-        lucide.createIcons();
+        if (window.lucide) {
+            lucide.createIcons();
+        }
+
+        function copyScenePrompt(button) {
+            const prompt = button.getAttribute("data-prompt") || "";
+
+            if (!prompt) {
+                return;
+            }
+
+            function showResult(message) {
+                button.innerText = message;
+            }
+
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(prompt)
+                    .then(() => showResult("Prompt Copied"))
+                    .catch(() => fallbackCopyPrompt(prompt, showResult));
+            } else {
+                fallbackCopyPrompt(prompt, showResult);
+            }
+        }
+
+        function fallbackCopyPrompt(prompt, showResult) {
+            const textarea = document.createElement("textarea");
+            textarea.value = prompt;
+            textarea.style.position = "fixed";
+            textarea.style.opacity = "0";
+
+            document.body.appendChild(textarea);
+            textarea.select();
+
+            try {
+                const copied = document.execCommand("copy");
+                showResult(copied ? "Prompt Copied" : "Copy Failed");
+            } catch (error) {
+                showResult("Copy Failed");
+            }
+
+            document.body.removeChild(textarea);
+        }
     </script>
 
 </body>
-
 </html>
